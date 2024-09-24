@@ -17,10 +17,62 @@ Find the GDB manual and other documentation resources online at:
 For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.exe...
+(gdb) break main
+Breakpoint 1 at 0x140001587: file .\problem03.c, line 19.
+(gdb) s
+The program is not being run.
+(gdb) s
+The program is not being run.
 (gdb) r
 Starting program: C:\Users\Raksh\c-activity-sets2\set01\a.exe
-[New Thread 19544.0x312c]
-2
-3
-The sum of 2 and 3 is 5[Thread 19544.0x4d44 exited with code 0]
-[Inferior 1 (process 19544) exited normally]
+[New Thread 11860.0x4020]
+
+Thread 1 hit Breakpoint 1, main () at .\problem03.c:19
+19          int a=input();
+(gdb) s
+input () at .\problem03.c:5
+5           scanf("%d",&a);
+(gdb) n
+5
+6           return a;
+(gdb) n
+7       }
+(gdb) n
+main () at .\problem03.c:20
+20          int b=input();
+(gdb) s
+input () at .\problem03.c:5
+5           scanf("%d",&a);
+(gdb) n
+5
+6           return a;
+(gdb) n
+7       }
+(gdb) s
+main () at .\problem03.c:21
+21          int sum=add(a,b);
+(gdb) s
+add (a=5, b=5) at .\problem03.c:10
+10         int sum= a+b;
+(gdb) s
+11         return sum;
+(gdb) s
+12      }
+(gdb) s
+main () at .\problem03.c:22
+22          output(a,b,sum);
+(gdb) s
+output (a=5, b=5, sum=10) at .\problem03.c:15
+15           printf("The sum of %d and %d is %d",a,b,sum);
+(gdb) n
+The sum of 5 and 5 is 1016      }
+(gdb) n
+main () at .\problem03.c:23
+23          return 0;
+(gdb) n
+24      }
+(gdb) continue
+Continuing.
+[Thread 11860.0x4020 exited with code 0]
+[Inferior 1 (process 11860) exited normally]
+(gdb) exit 
