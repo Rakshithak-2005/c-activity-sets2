@@ -17,11 +17,128 @@ Find the GDB manual and other documentation resources online at:
 For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.exe...
-(gdb) 
-(gdb)
+(gdb) break main
+Breakpoint 1 at 0x1400014b1: file .\problem01.c, line 4.
+(gdb) run
+Starting program: C:\Users\Raksh\c-activity-sets2\set01\a.exe
+[New Thread 15308.0x477c]
+
+Thread 1 hit Breakpoint 1, main () at .\problem01.c:4
+4           printf("Rakshitha\n");
+(gdb) step
+printf (__format=0x7ff76aaca000 "Rakshitha\n") at C:/msys64/mingw64/include/stdio.h:371
+371       __builtin_va_list __local_argv; __builtin_va_start( __local_argv, __format );
+(gdb) next
+372       __retval = __mingw_vfprintf( stdout, __format, __local_argv );
+(gdb) print rakshitha
+No symbol "rakshitha" in current context.
+(gdb) continue
+Continuing.
+Rakshitha
+[Thread 15308.0x477c exited with code 0]
+[Inferior 1 (process 15308) exited normally]
+(gdb) r       
+Starting program: C:\Users\Raksh\c-activity-sets2\set01\a.exe
+[New Thread 15972.0x62ac]
+
+Thread 1 hit Breakpoint 1, main () at .\problem01.c:4
+4           printf("Rakshitha\n");
+(gdb) s
+printf (__format=0x7ff76aaca000 "Rakshitha\n") at C:/msys64/mingw64/include/stdio.h:371
+371       __builtin_va_list __local_argv; __builtin_va_start( __local_argv, __format );
+(gdb) s
+372       __retval = __mingw_vfprintf( stdout, __format, __local_argv );
+(gdb) s
+__acrt_iob_func (index=1) at C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/acrt_iob_func.c:11
+warning: 11     C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/acrt_iob_func.c: No such file or directory
+(gdb) n
+Rakshitha
+printf (__format=0x7ff76aaca000 "Rakshitha\n") at C:/msys64/mingw64/include/stdio.h:374
+374       return __retval;
+(gdb) n
+375     }
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: C:\Users\Raksh\c-activity-sets2\set01\a.exe
+[New Thread 28264.0x18e8]
+
+Thread 1 hit Breakpoint 1, main () at .\problem01.c:4
+4           printf("Rakshitha\n");
+(gdb) s
+printf (__format=0x7ff76aaca000 "Rakshitha\n") at C:/msys64/mingw64/include/stdio.h:371
+371       __builtin_va_list __local_argv; __builtin_va_start( __local_argv, __format );
+(gdb) s
+372       __retval = __mingw_vfprintf( stdout, __format, __local_argv );
+(gdb) s
+__acrt_iob_func (index=1) at C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/acrt_iob_func.c:11
+warning: 11     C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/acrt_iob_func.c: No such file or directory
+(gdb) s
+__mingw_vfprintf (stream=0x7ffbda0b8a30 <msvcrt!_iob+48>, fmt=0x7ff76aaca000 "Rakshitha\n", argv=0x5ffe88 "α\025f")
+    at C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/mingw_vfprintf.c:53
+warning: 53     C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/mingw_vfprintf.c: No such file or directory
+(gdb) s
+_lock_file (pf=0x7ffbda0b8a30 <msvcrt!_iob+48>) at C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/mingw_lock.c:42
+warning: 42     C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/mingw_lock.c: No such file or directory
+(gdb) s
+__acrt_iob_func (index=index@entry=0) at C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/acrt_iob_func.c:11
+warning: 11     C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/acrt_iob_func.c: No such file or directory
+(gdb) s
+__acrt_iob_func (index=index@entry=19) at C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/acrt_iob_func.c:11
+11      in C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/acrt_iob_func.c
+(gdb) dis
+(gdb) d
+Delete all breakpoints, watchpoints, tracepoints, and catchpoints? (y or n) n
+(gdb) l
+6       in C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/acrt_iob_func.c
+(gdb) s
+_lock_file (pf=0x7ffbda0b8a30 <msvcrt!_iob+48>) at D:/a/msys64/mingw64/include/stdio.h:1477
+warning: 1477   D:/a/msys64/mingw64/include/stdio.h: No such file or directory
+(gdb) s
+_lock_file (pf=0x7ffbda0b8a30 <msvcrt!_iob+48>) at C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/mingw_lock.c:47
+warning: 47     C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/mingw_lock.c: No such file or directory
+(gdb) s
+__acrt_iob_func (index=index@entry=0) at C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/acrt_iob_func.c:11
+warning: 11     C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/acrt_iob_func.c: No such file or directory
+(gdb) s
+_lock_file (pf=0x7ffbda0b8a30 <msvcrt!_iob+48>) at C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/mingw_lock.c:49
+warning: 49     C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/mingw_lock.c: No such file or directory
+(gdb) s
+__mingw_vfprintf (stream=0x7ffbda0b8a30 <msvcrt!_iob+48>, fmt=0x7ff76aaca000 "Rakshitha\n", argv=0x5ffe88 "α\025f")
+    at C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/mingw_vfprintf.c:54
+warning: 54     C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/mingw_vfprintf.c: No such file or directory
+(gdb) s
+0x00007ff76aac42c3 in __mingw_pformat (flags=flags@entry=24576, dest=dest@entry=0x7ffbda0b8a30 <msvcrt!_iob+48>, max=max@entry=0,    
+    fmt=fmt@entry=0x7ff76aaca000 "Rakshitha\n", argv=argv@entry=0x5ffe88 "α\025f")
+    at C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/mingw_pformat.c:2354
+warning: 2354   C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/mingw_pformat.c: No such file or directory
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: C:\Users\Raksh\c-activity-sets2\set01\a.exe
+[New Thread 7220.0x6b3c]
+Rakshitha
+[Thread 7220.0x6b3c exited with code 0]
+[Inferior 1 (process 7220) exited normally]
 (gdb) r
 Starting program: C:\Users\Raksh\c-activity-sets2\set01\a.exe
-[New Thread 2468.0x3100]
+[New Thread 21384.0x6350]
 Rakshitha
-[Thread 2468.0x4c4 exited with code 0]
-[Inferior 1 (process 2468) exited normally]
+[Thread 21384.0x6350 exited with code 0]
+[Inferior 1 (process 21384) exited normally]
+(gdb) n
+The program is not being run.
+(gdb) b main
+Note: breakpoint 1 (disabled) also set at pc 0x7ff76aac14b1.
+Breakpoint 2 at 0x7ff76aac14b1: file .\problem01.c, line 4.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set01\a.exe
+[New Thread 15812.0x6a68]
+
+Thread 1 hit Breakpoint 2, main () at .\problem01.c:4
+4           printf("Rakshitha\n");
+(gdb) n
+Rakshitha
+5           return 0;
+(gdb) n
+6       }
