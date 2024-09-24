@@ -17,11 +17,55 @@ Find the GDB manual and other documentation resources online at:
 For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.exe...
+(gdb) break main
+Breakpoint 1 at 0x140001505: file .\problem02.c, line 5.
 (gdb) r
 Starting program: C:\Users\Raksh\c-activity-sets2\set01\a.exe
-[New Thread 19348.0x5eac]
-2
-4
-6
-[Thread 19348.0x5eac exited with code 0]
-[Inferior 1 (process 19348) exited normally]
+[New Thread 26304.0x36c4]
+
+Thread 1 hit Breakpoint 1, main () at .\problem02.c:5
+5           scanf("%d",&a);
+(gdb) s
+scanf (__format=0x7ff68ac72000 "%d") at C:/msys64/mingw64/include/stdio.h:304
+304       __builtin_va_list __local_argv; __builtin_va_start( __local_argv, __format );
+(gdb) s
+305       __retval = __mingw_vfscanf( stdin, __format, __local_argv );
+(gdb) s
+__acrt_iob_func (index=0) at C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/acrt_iob_func.c:11
+warning: 11     C:/M/B/src/mingw-w64/mingw-w64-crt/stdio/acrt_iob_func.c: No such file or directory
+(gdb) n
+5
+scanf (__format=0x7ff68ac72000 "%d") at C:/msys64/mingw64/include/stdio.h:307
+307       return __retval;
+(gdb) n
+308     }
+(gdb) n
+main () at .\problem02.c:6
+6           scanf("%d",&b);
+(gdb) s
+scanf (__format=0x7ff68ac72000 "%d") at C:/msys64/mingw64/include/stdio.h:304
+304       __builtin_va_list __local_argv; __builtin_va_start( __local_argv, __format );
+(gdb) n
+305       __retval = __mingw_vfscanf( stdin, __format, __local_argv );
+(gdb) n
+3
+307       return __retval;
+(gdb) n
+308     }
+(gdb) n
+main () at .\problem02.c:7
+7           c=a+b;
+(gdb) n
+8           printf("%d\n",c);
+(gdb) n
+8
+9           return 0;
+(gdb) p 3+3
+$1 = 6
+(gdb) p a+b
+$2 = 8
+(gdb) continue
+Continuing.
+[Thread 26304.0x36c4 exited with code 0]
+[Inferior 1 (process 26304) exited normally]
+(gdb) exit
