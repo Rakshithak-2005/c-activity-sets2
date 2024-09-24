@@ -1,5 +1,5 @@
 PS C:\Users\Raksh\c-activity-sets2\set01> gcc -g .\problem08.c
-PS C:\Users\Raksh\c-activity-sets2\set01> gdb a.exe
+PS C:\Users\Raksh\c-activity-sets2\set01> gdb a.exe 
 GNU gdb (GDB) 15.1
 Copyright (C) 2024 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
@@ -17,21 +17,146 @@ Find the GDB manual and other documentation resources online at:
 For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.exe...
+(gdb) break main
+Breakpoint 1 at 0x14000164c: file .\problem08.c, line 34.
 (gdb) r
 Starting program: C:\Users\Raksh\c-activity-sets2\set01\a.exe
-[New Thread 3068.0x4e0]
+[New Thread 5308.0x66dc]
+
+Thread 1 hit Breakpoint 1, 0x00007ff7278e164c in main () at .\problem08.c:34
+34      {
+(gdb) n
+35          int n=input_array_size();
+(gdb) s
+input_array_size () at .\problem08.c:5
+5          scanf("%d",&a);
+(gdb) n
 5
+6          return a;
+(gdb) n
+7       }
+(gdb) n
+main () at .\problem08.c:36
+36          int a[n];
+(gdb) n
+37          input_array(n,a);
+(gdb) s
+input_array (n=5, a=0x5ffe50) at .\problem08.c:10
+10         for(int i=1;i<=n;i++)
+(gdb) n
+12          scanf("%d",&a[i]);
+(gdb) n
 1
+10         for(int i=1;i<=n;i++)
+(gdb) n
+12          scanf("%d",&a[i]);
+(gdb) 2
+Undefined command: "2".  Try "help".
+(gdb) n
 2
+10         for(int i=1;i<=n;i++)
+(gdb) n
+12          scanf("%d",&a[i]);
+(gdb) 3
+Undefined command: "3".  Try "help".
+(gdb) n
 3
+10         for(int i=1;i<=n;i++)
+(gdb) n
+12          scanf("%d",&a[i]);
+(gdb) n
 4
+10         for(int i=1;i<=n;i++)
+(gdb) n
+12          scanf("%d",&a[i]);
+(gdb) n
 5
+10         for(int i=1;i<=n;i++)
+(gdb) n
+14      }
+(gdb) 6
+Undefined command: "6".  Try "help".
+(gdb) n
+main () at .\problem08.c:38
+38          int sum=sum_n_array(n,a);
+(gdb) s
+sum_n_array (n=5, a=0x5ffe50) at .\problem08.c:17
+17          int sum=0;
+(gdb) n
+18         for(int i=1;i<=n;i++)
+(gdb) n
+20           sum=sum+a[i];
+(gdb) n
+18         for(int i=1;i<=n;i++)
+(gdb) n
+20           sum=sum+a[i];
+(gdb) n
+18         for(int i=1;i<=n;i++)
+(gdb) s
+20           sum=sum+a[i];
+(gdb) s
+18         for(int i=1;i<=n;i++)
+(gdb) s
+20           sum=sum+a[i];
+(gdb) s
+18         for(int i=1;i<=n;i++)
+(gdb) s
+20           sum=sum+a[i];
+(gdb) s
+18         for(int i=1;i<=n;i++)
+(gdb) s
+22         return sum;
+(gdb) s
+23      }
+(gdb) n
+main () at .\problem08.c:39
+39          output(n,a,sum);
+(gdb) s
+output (n=5, a=0x5ffe50, sum=15) at .\problem08.c:26
+26        printf("The sum of %d numbers which are\n",n);
+(gdb) n
 The sum of 5 numbers which are
+27        for(int i=1;i<=n;i++)
+(gdb) s  
+29          printf("%d\n",a[i]);
+(gdb) n
 1
+27        for(int i=1;i<=n;i++)
+(gdb) n
+29          printf("%d\n",a[i]);
+(gdb) n
 2
+27        for(int i=1;i<=n;i++)
+(gdb) n
+29          printf("%d\n",a[i]);
+(gdb) n
 3
+27        for(int i=1;i<=n;i++)
+(gdb) n 
+29          printf("%d\n",a[i]);
+(gdb) n
 4
+27        for(int i=1;i<=n;i++)
+(gdb) n 
+29          printf("%d\n",a[i]);
+(gdb) n
 5
-total sum of these is 15[Thread 3068.0x2658 exited with code 0]
-[Inferior 1 (process 3068) exited normally]
+27        for(int i=1;i<=n;i++)
+(gdb) n
+31        printf("total sum of these is %d",sum);
+(gdb) n
+total sum of these is 1532      }
+(gdb) n
+main () at .\problem08.c:40
+40          return 0;
+(gdb) n
+41      }
+(gdb) n
+__tmainCRTStartup () at C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c:268
+warning: 268    C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory
+(gdb) n
+269     in C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c
+(gdb) n
+[Thread 5308.0x66dc exited with code 0]
+[Inferior 1 (process 5308) exited normally]
 (gdb) exit
