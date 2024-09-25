@@ -1,0 +1,75 @@
+PS C:\Users\Raksh\c-activity-sets2\set01> gcc -g .\problem10.c
+PS C:\Users\Raksh\c-activity-sets2\set01> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+--Type <RET> for more, q to quit, c to continue without paging--
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) break main
+Breakpoint 1 at 0x14000165b: file .\problem10.c, line 26.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set01\a.exe
+[New Thread 26460.0x6e9c]
+
+Thread 1 hit Breakpoint 1, main () at .\problem10.c:26
+26          input_two_strings(string1,string2);
+(gdb) s
+input_two_strings (string1=0x5ffe30 "╨\022┤", string2=0x5ffdc0 "└\022┤") at .\problem10.c:4
+4           scanf("%s",string1);
+(gdb) n
+Hello
+5           scanf("%s",string2);
+(gdb) n
+hello
+6       }
+(gdb) n
+main () at .\problem10.c:27
+27          int result=stringcompare(string1,string2);
+(gdb) s
+stringcompare (string1=0x5ffe30 "Hello", string2=0x5ffdc0 "hello") at .\problem10.c:10
+10         for(i=0; string1[i]== string2[i]&&string1[i]!='\0';i++);
+(gdb) s
+11         n=string1[i]-string2[i];
+(gdb) s
+12         return n;
+(gdb) s
+13      }
+(gdb) n
+main () at .\problem10.c:28
+28          output(string1,string2,result);
+(gdb) s
+output (string1=0x5ffe30 "Hello", string2=0x5ffdc0 "hello", result=-32) at .\problem10.c:16
+16          if (result == 0)
+(gdb) n
+18          else if (result > 0)
+(gdb) n
+21              printf("%s is lesser than %s \n",string1,string2);
+(gdb) n
+Hello is lesser than hello
+22      }
+(gdb) n
+main () at .\problem10.c:29
+29          return 0;
+(gdb) n
+30      }
+(gdb) n
+__tmainCRTStartup () at C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c:268
+warning: 268    C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory
+(gdb) n
+269     in C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c
+(gdb) n
+[Thread 26460.0x6e9c exited with code 0]
+[Inferior 1 (process 26460) exited normally]
+(gdb) exit

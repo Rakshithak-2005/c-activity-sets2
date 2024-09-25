@@ -1,0 +1,94 @@
+PS C:\Users\Raksh\c-activity-sets2\set01> gcc -g .\problem11.c
+PS C:\Users\Raksh\c-activity-sets2\set01> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+--Type <RET> for more, q to quit, c to continue without paging--
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) break main
+Breakpoint 1 at 0x140001661: file .\problem11.c, line 30.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set01\a.exe 
+[New Thread 11648.0x613c]
+
+Thread 1 hit Breakpoint 1, main () at .\problem11.c:30
+30          a=input_complex();
+(gdb) s
+input_complex () at .\problem11.c:10
+10          printf("Enter real part: ");
+(gdb) n
+Enter real part: 11         scanf("%f", &c.real);
+(gdb) n
+3
+12          printf("Enter imaginary part: ");
+(gdb) n
+Enter imaginary part: 13            scanf("%f", &c.imaginary);
+(gdb) n
+4
+14          return c;
+(gdb) n
+15      }
+(gdb) n
+main () at .\problem11.c:31
+31          b=input_complex();
+(gdb) s
+input_complex () at .\problem11.c:10
+10          printf("Enter real part: ");
+(gdb) n
+Enter real part: 11         scanf("%f", &c.real);
+(gdb) n
+3
+12          printf("Enter imaginary part: ");
+(gdb) n
+Enter imaginary part: 13            scanf("%f", &c.imaginary);
+(gdb) n
+4
+14          return c;
+(gdb) n
+15      }
+(gdb) n
+main () at .\problem11.c:32
+32          sum=add_complex(a,b);
+(gdb) s
+add_complex (a=..., b=...) at .\problem11.c:19
+19         s.real =a.real+b.real;
+(gdb) n
+20         s.imaginary=a.imaginary+b.imaginary;
+(gdb) n
+21         return s;
+(gdb) n
+22      }
+(gdb) n
+main () at .\problem11.c:33
+33          output(a,b,sum);
+(gdb) s
+output (a=..., b=..., sum=...) at .\problem11.c:25
+25         printf("The sum of %f+%fi and %f+%fi is %f+%fi",a.real,a.imaginary,b.real,b.imaginary,sum.real,sum.imaginary);
+(gdb) n
+The sum of 3.000000+4.000000i and 3.000000+4.000000i is 6.000000+8.000000i26    }
+(gdb) n
+main () at .\problem11.c:34
+34          return 0;
+(gdb) n
+35      }
+(gdb) n
+__tmainCRTStartup () at C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c:268
+warning: 268    C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory
+(gdb) n
+269     in C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c
+(gdb) n
+[Thread 11648.0x613c exited with code 0]
+[Inferior 1 (process 11648) exited normally]
+(gdb) exit
