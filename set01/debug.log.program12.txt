@@ -1,0 +1,158 @@
+PS C:\Users\Raksh\c-activity-sets2\set01> gcc -g .\problem12.c
+PS C:\Users\Raksh\c-activity-sets2\set01> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+--Type <RET> for more, q to quit, c to continue without paging--
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) break main
+Breakpoint 1 at 0x140001782: file .\problem12.c, line 57.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set01\a.exe
+[New Thread 7100.0x4bb0]
+
+Thread 1 hit Breakpoint 1, 0x00007ff77e231782 in main () at .\problem12.c:57
+57      {
+(gdb) n
+58          int n=get_n();
+(gdb) s
+get_n () at .\problem12.c:10
+10         printf("enter the total number of complex numbers to be added\n");
+(gdb) n
+enter the total number of complex numbers to be added
+11         scanf("%d",&n);
+(gdb) n
+5
+12         return n;
+(gdb) n
+13      }
+(gdb) n
+main () at .\problem12.c:59
+59          Complex c[n];
+(gdb) n
+60          input_n_complex(n,c);
+(gdb) s
+input_n_complex (n=5, c=0x5ffe40) at .\problem12.c:25
+25           for(int i=0;i<n;i++)
+(gdb) n
+27              c[i]=input_complex();
+(gdb) n
+Enter real part: 1
+Enter imaginary part: 2
+25           for(int i=0;i<n;i++)
+(gdb) n
+27              c[i]=input_complex();
+(gdb) n
+Enter real part: 1
+Enter imaginary part: 2
+25           for(int i=0;i<n;i++)
+(gdb) n
+27              c[i]=input_complex();
+(gdb) n
+Enter real part: 1
+Enter imaginary part: 2
+25           for(int i=0;i<n;i++)
+(gdb) n
+27              c[i]=input_complex();
+(gdb) n
+Enter real part: 1
+Enter imaginary part: 2
+25           for(int i=0;i<n;i++)
+(gdb) n
+27              c[i]=input_complex();
+(gdb) n
+Enter real part: 1
+Enter imaginary part: 2
+25           for(int i=0;i<n;i++)
+(gdb) n
+29      }
+(gdb) n
+main () at .\problem12.c:61
+61          Complex result=add_n_complex(n,c);
+(gdb) s
+add_n_complex (n=5, c=0x5ffe40) at .\problem12.c:40
+40        r.real=0;
+(gdb) n
+41        r.imaginary=0;
+(gdb) n
+42           for(int i=0;i<n;i++)
+(gdb) n
+44              r=add(r,c[i]);
+(gdb) n
+42           for(int i=0;i<n;i++)
+(gdb) n
+44              r=add(r,c[i]);
+(gdb) n
+42           for(int i=0;i<n;i++)
+(gdb)
+44              r=add(r,c[i]);
+(gdb) n
+42           for(int i=0;i<n;i++)
+(gdb) n
+44              r=add(r,c[i]);
+(gdb) n
+42           for(int i=0;i<n;i++)
+(gdb) n
+44              r=add(r,c[i]);
+(gdb) n
+42           for(int i=0;i<n;i++)
+(gdb) n
+46           return r;
+(gdb) n
+47      }
+(gdb) n
+main () at .\problem12.c:62
+62          output(n,c,result);
+(gdb) s
+output (n=5, c=0x5ffe40, result=...) at .\problem12.c:50
+50         for(int i=0;i<n;i++)
+(gdb) n
+52          printf("%f+%fi +",c[i].real,c[i].imaginary);
+(gdb) n
+1.000000+2.000000i +50     for(int i=0;i<n;i++)
+(gdb) n
+52          printf("%f+%fi +",c[i].real,c[i].imaginary);
+(gdb) n
+1.000000+2.000000i +50     for(int i=0;i<n;i++)
+(gdb) n
+52          printf("%f+%fi +",c[i].real,c[i].imaginary);
+(gdb) n
+1.000000+2.000000i +50     for(int i=0;i<n;i++)
+(gdb) n
+52          printf("%f+%fi +",c[i].real,c[i].imaginary);
+(gdb) n
+1.000000+2.000000i +50     for(int i=0;i<n;i++)
+(gdb) n
+52          printf("%f+%fi +",c[i].real,c[i].imaginary);
+(gdb) n
+1.000000+2.000000i +50     for(int i=0;i<n;i++)
+(gdb) n
+54         printf(" is %f+%fi",result.real,result.imaginary);
+(gdb) n
+ is 5.000000+10.000000i55       }
+(gdb) n
+main () at .\problem12.c:63
+63          return 0;
+(gdb) n
+64      }
+(gdb) n
+__tmainCRTStartup () at C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c:268
+warning: 268    C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory
+(gdb) n
+269     in C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c
+(gdb) n
+[Thread 7100.0x4bb0 exited with code 0]
+[Inferior 1 (process 7100) exited normally]
+(gdb) exit
