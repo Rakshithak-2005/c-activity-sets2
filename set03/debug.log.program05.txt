@@ -1,0 +1,50 @@
+PS C:\Users\Raksh\c-activity-sets2\set03> gcc  -g .\problem05.c
+PS C:\Users\Raksh\c-activity-sets2\set03> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+--Type <RET> for more, q to quit, c to continue without paging--
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) b main
+Breakpoint 1 at 0x1400016d1: file .\problem05.c, line 38.
+(gdb) n
+The program is not being run.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set03\a.exe
+[New Thread 11280.0x4978]
+
+Thread 1 hit Breakpoint 1, 0x00007ff7e91716d1 in main () at .\problem05.c:38
+38      {
+(gdb) n
+40          n=input_array_size();
+(gdb) n
+35
+41          n--;
+(gdb) n
+42          int a[n];
+(gdb) n
+43          init_array(n,a);
+(gdb) n
+44          erotosthenes_sieve(n,a);
+(gdb) n
+45          output(n,a);
+(gdb) n
+2 3 5 7 11 13 17 19 23 29 31
+46          return 0;
+(gdb) n
+47      }
+(gdb) n
+__tmainCRTStartup () at C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c:268
+warning: 268    C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory

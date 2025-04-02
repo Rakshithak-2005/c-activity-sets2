@@ -1,0 +1,169 @@
+PS C:\Users\Raksh\c-activity-sets2\set03> gcc -g .\problem04.c
+PS C:\Users\Raksh\c-activity-sets2\set03> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+--Type <RET> for more, q to quit, c to continue without paging--
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) b main
+Breakpoint 1 at 0x14000159e: file .\problem04.c, line 26.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set03\a.exe
+[New Thread 21612.0x5458]
+
+Thread 1 hit Breakpoint 1, main () at .\problem04.c:26
+26          n=input();
+(gdb) s
+input () at .\problem04.c:5
+5             scanf("%d",&a);
+(gdb) n
+
+5
+6             return a;
+(gdb) n
+7       }
+(gdb) n
+main () at .\problem04.c:27
+27          fibo=find_fibo(n);
+(gdb) s
+find_fibo (n=5) at .\problem04.c:10
+10          int a=0,f,i=1;
+(gdb) n
+11          while(i<n)
+(gdb) n
+13             f=a+i;
+(gdb) n
+14             a=i;
+(gdb) n
+15             i=f;
+(gdb) n
+11          while(i<n)
+(gdb) n
+13             f=a+i;
+(gdb) n
+14             a=i;
+(gdb) n
+15             i=f;
+(gdb) n
+11          while(i<n)
+(gdb) n
+13             f=a+i;
+(gdb) n
+14             a=i;
+(gdb) n
+15             i=f;
+(gdb)  
+11          while(i<n)
+(gdb) n
+13             f=a+i;
+(gdb) n
+14             a=i;
+(gdb) n
+15             i=f;
+(gdb) n
+11          while(i<n)
+(gdb) n
+17          return f;
+(gdb) n
+18      }
+(gdb) n
+main () at .\problem04.c:28
+28          output(n,fibo);
+(gdb) s
+output (n=5, fibo=5) at .\problem04.c:21
+21         printf("fibo(%d) = %d",n,fibo);
+(gdb) n
+fibo(5) = 522   }
+(gdb) break m
+Function "m" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) y
+Breakpoint 2 (m) pending.
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: C:\Users\Raksh\c-activity-sets2\set03\a.exe
+[New Thread 22300.0x8f4]
+
+Thread 1 hit Breakpoint 1, main () at .\problem04.c:26
+26          n=input();
+(gdb) s
+input () at .\problem04.c:5
+5             scanf("%d",&a);
+(gdb) n
+6
+6             return a;
+(gdb) n
+7       }
+(gdb) n
+main () at .\problem04.c:27
+27          fibo=find_fibo(n);
+(gdb) s
+find_fibo (n=6) at .\problem04.c:10
+10          int a=0,f,i=1;
+(gdb) n
+11          while(i<n)
+(gdb) n
+13             f=a+i;
+(gdb) n
+14             a=i;
+(gdb) n
+15             i=f;
+(gdb) n
+11          while(i<n)
+(gdb) n
+13             f=a+i;
+(gdb) n
+14             a=i;
+(gdb) n
+15             i=f;
+(gdb) n
+11          while(i<n)
+(gdb) n
+13             f=a+i;
+(gdb) n
+14             a=i;
+(gdb) n
+15             i=f;
+(gdb) n
+11          while(i<n)
+(gdb) n
+13             f=a+i;
+(gdb) n
+14             a=i;
+(gdb) n
+15             i=f;
+(gdb) n
+11          while(i<n)
+(gdb) n
+13             f=a+i;
+(gdb) n
+14             a=i;
+(gdb) n
+15             i=f;
+(gdb) n
+11          while(i<n)
+(gdb) n
+17          return f;
+(gdb) n
+18      }
+(gdb) n
+main () at .\problem04.c:28
+28          output(n,fibo);
+(gdb) s
+output (n=6, fibo=8) at .\problem04.c:21
+21         printf("fibo(%d) = %d",n,fibo);
+(gdb) n
+fibo(6) = 822   }
+(gdb) exit

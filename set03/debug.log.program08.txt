@@ -1,0 +1,45 @@
+PS C:\Users\Raksh\c-activity-sets2\set03> gcc  -g .\problem08.c
+PS C:\Users\Raksh\c-activity-sets2\set03> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+--Type <RET> for more, q to quit, c to continue without paging--
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) b main
+Breakpoint 1 at 0x140001723: file .\problem08.c, line 54.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set03\a.exe 
+[New Thread 4124.0x5020]
+
+Thread 1 hit Breakpoint 1, main () at .\problem08.c:54
+54          input_polygon(&p);
+(gdb) n
+Enter the number of sides of the polygon:
+4
+Enter the coordinates of point 0 (x,y):0 0
+Enter the coordinates of point 1 (x,y):1 0
+Enter the coordinates of point 2 (x,y):1 1
+Enter the coordinates of point 3 (x,y):0 1
+55          find_perimeter(&p);
+(gdb) n
+56          output(p);
+(gdb) n
+The perimeter of the polygon is 4.000000
+57          return 0;
+(gdb) n
+58      }
+(gdb) n
+__tmainCRTStartup () at C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c:268
+warning: 268    C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory

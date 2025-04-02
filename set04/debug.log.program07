@@ -1,0 +1,46 @@
+PS C:\Users\Raksh\c-activity-sets2\set04> gcc  -g .\problem07.c
+PS C:\Users\Raksh\c-activity-sets2\set04> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+--Type <RET> for more, q to quit, c to continue without paging--
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) b main
+Breakpoint 1 at 0x14000163a: file .\problem07.c, line 46.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set04\a.exe 
+[New Thread 26036.0xad0]
+
+Thread 1 hit Breakpoint 1, main () at .\problem07.c:46
+46          f1=input_fraction();
+(gdb) n
+9 6
+47          f2=input_fraction();
+(gdb) n
+5 6
+48          Fraction f3=add_fractions(f1,f2);
+(gdb) n
+49          int gcd=find_gcd(f3);
+(gdb) n
+50          sum.num=f3.num/gcd;
+(gdb) n
+51          sum.den=f3.den/gcd;
+(gdb) n
+52          output(f1,f2,sum);
+(gdb) n
+9/6 + 5/6 = 7/3
+53          return 0;
+(gdb) n
+54      }

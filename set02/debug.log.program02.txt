@@ -1,0 +1,93 @@
+PS C:\Users\Raksh\c-activity-sets2\set02> gcc -g .\problem02.c
+PS C:\Users\Raksh\c-activity-sets2\set02> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+--Type <RET> for more, q to quit, c to continue without paging--
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) break main
+Breakpoint 1 at 0x1400015c5: file .\problem02.c, line 30.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set02\a.exe
+[New Thread 9460.0x500]
+
+Thread 1 hit Breakpoint 1, main () at .\problem02.c:30
+30          a=input_side();
+(gdb) s
+input_side () at .\problem02.c:5
+5          scanf("%d",&n);
+(gdb) n
+5
+6          return n;
+(gdb) n
+7       }
+(gdb) n
+main () at .\problem02.c:31
+31          b=input_side();
+(gdb) s
+input_side () at .\problem02.c:5
+5          scanf("%d",&n);
+(gdb) n
+4
+6          return n;
+(gdb) n
+7       }
+(gdb) n
+main () at .\problem02.c:32
+32          c=input_side();
+(gdb) s
+input_side () at .\problem02.c:5
+5          scanf("%d",&n);
+(gdb) n
+5
+6          return n;
+(gdb) n
+7       }
+(gdb) n
+main () at .\problem02.c:33
+33          isscalene=check_scalene(a,b,c);
+(gdb) s
+check_scalene (a=5, b=4, c=5) at .\problem02.c:10
+10          if(a!=b && b!=c)
+(gdb) n
+12              if(a!=c)
+(gdb) n
+15          return 0;
+(gdb) n
+16      }
+(gdb) n
+main () at .\problem02.c:34
+34          output(a, b,c,isscalene);
+(gdb) s
+output (a=5, b=4, c=5, isscalene=0) at .\problem02.c:19
+19        if(isscalene==0)
+(gdb) n
+21          printf("The triangle with sides %d, %d and %d is not scalene\n",a,b,c);
+(gdb) n
+The triangle with sides 5, 4 and 5 is not scalene
+26      }
+(gdb) n
+main () at .\problem02.c:35
+35          return 0;
+(gdb) n
+36      }
+(gdb) n
+__tmainCRTStartup () at C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c:268
+warning: 268    C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory
+(gdb) n
+269     in C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c
+(gdb) n
+[Thread 9460.0x500 exited with code 0]
+[Inferior 1 (process 9460) exited normally]

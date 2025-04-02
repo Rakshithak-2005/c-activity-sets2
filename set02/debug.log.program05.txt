@@ -1,0 +1,120 @@
+PS C:\Users\Raksh\c-activity-sets2\set02> gcc -g .\problem05.c
+PS C:\Users\Raksh\c-activity-sets2\set02> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+--Type <RET> for more, q to quit, c to continue without paging--
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) b main
+Breakpoint 1 at 0x1400015cb: file .\problem05.c, line 34.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set02\a.exe
+[New Thread 22368.0x1e00]
+
+Thread 1 hit Breakpoint 1, main () at .\problem05.c:34
+34          int a= input();
+(gdb) s
+input () at .\problem05.c:5
+5          scanf("%d",&n);
+(gdb) n
+12
+6          return n;
+(gdb) n
+7       }
+(gdb) n
+main () at .\problem05.c:35
+35          int b= input();
+(gdb) s
+input () at .\problem05.c:5
+5          scanf("%d",&n);
+(gdb) n
+16
+6          return n;
+(gdb) n
+7       }
+(gdb) n
+main () at .\problem05.c:36
+36          int gcd= find_gcd(a,b);
+(gdb) s
+find_gcd (a=12, b=16) at .\problem05.c:10
+10         int n=0,gcd;
+(gdb) n
+11         if(a>b)
+(gdb) n
+17            n=a;
+(gdb) n
+19         for(int i=1;i<=n/2;i++)
+(gdb) n
+21            if(a%i==0 && b%i==0)
+(gdb) n
+23               gcd=i;
+(gdb) n
+19         for(int i=1;i<=n/2;i++)
+(gdb) n
+21            if(a%i==0 && b%i==0)
+(gdb) n
+23               gcd=i;
+(gdb) n
+19         for(int i=1;i<=n/2;i++)
+(gdb) n
+21            if(a%i==0 && b%i==0)
+(gdb) n
+19         for(int i=1;i<=n/2;i++)
+(gdb) nn
+Undefined command: "nn".  Try "help".
+(gdb) n
+21            if(a%i==0 && b%i==0)
+(gdb) n
+23               gcd=i;
+(gdb) n
+19         for(int i=1;i<=n/2;i++)
+(gdb) n
+21            if(a%i==0 && b%i==0)
+(gdb) n
+19         for(int i=1;i<=n/2;i++)
+(gdb) n
+21            if(a%i==0 && b%i==0)
+(gdb) n
+19         for(int i=1;i<=n/2;i++)
+(gdb) n
+26         return gcd;
+(gdb) n
+27      }
+(gdb) n
+main () at .\problem05.c:37
+37          output(a,b,gcd);
+(gdb) s
+output (a=12, b=16, gcd=4) at .\problem05.c:30
+30         printf("%d\n\n",gcd);
+(gdb) n
+4
+
+31      }
+(gdb) n
+main () at .\problem05.c:38
+38          return 0;
+(gdb) n
+39      }
+(gdb) n
+__tmainCRTStartup () at C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c:268
+warning: 268    C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory
+(gdb) n
+269     in C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c
+(gdb) n
+[Thread 22368.0x1e00 exited with code 0]
+[Inferior 1 (process 22368) exited normally]
+(gdb) n
+The program is not being run.
+(gdb) exit

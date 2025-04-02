@@ -1,0 +1,35 @@
+PS C:\Users\Raksh\c-activity-sets2\set03> gcc  -g .\problem07.c
+PS C:\Users\Raksh\c-activity-sets2\set03> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+--Type <RET> for more, q to quit, c to continue without paging--
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) b main
+Breakpoint 1 at 0x1400016b9: file .\problem07.c, line 36.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set03\a.exe
+[New Thread 24860.0x11d4]
+
+Thread 1 hit Breakpoint 1, main () at .\problem07.c:36
+36          Line l= input_line();
+(gdb) n
+1 1
+2 2
+37          find_length(&l);
+(gdb) n
+38          output(l);
+(gdb) n
+The distance between the points (1.000000,1.000000) and (2.000000,2.000000) is 1.41421439       }

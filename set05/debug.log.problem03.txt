@@ -1,0 +1,39 @@
+PS C:\Users\Raksh\c-activity-sets2\set05> gcc  -g .\problem03.c
+PS C:\Users\Raksh\c-activity-sets2\set05> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+--Type <RET> for more, q to quit, c to continue without paging--
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) b main
+Breakpoint 1 at 0x14000173f: file .\problem03.c, line 31.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set05\a.exe
+[New Thread 22672.0x3150]
+
+Thread 1 hit Breakpoint 1, main () at .\problem03.c:31
+31          c=input();
+(gdb) n
+1
+1
+1
+32         c.weight=find_weight(c);
+(gdb) n
+33         find_weights(&c);
+(gdb) n
+34         output(c);
+(gdb) n
+The weight of the camel with radius: 1.000000, height: 1.000000, length: 1.000000 is 3.142000
+35          return 0;

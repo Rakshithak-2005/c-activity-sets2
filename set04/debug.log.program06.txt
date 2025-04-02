@@ -1,0 +1,38 @@
+PS C:\Users\Raksh\c-activity-sets2\set04> gcc  -g .\problem06.c
+PS C:\Users\Raksh\c-activity-sets2\set04> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+--Type <RET> for more, q to quit, c to continue without paging--
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) b main
+Breakpoint 1 at 0x1400015b3: file .\problem06.c, line 25.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set04\a.exe 
+[New Thread 16188.0x1948]
+
+Thread 1 hit Breakpoint 1, main () at .\problem06.c:25
+25          input_string(string);
+(gdb) n
+hello world hello
+26          int no_words=count_words(string);
+(gdb) n
+27          output(string,no_words);
+(gdb) n
+The number of words is 3
+28          return 0;
+(gdb) n
+29      }
+(gdb)

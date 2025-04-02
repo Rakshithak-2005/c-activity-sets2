@@ -1,0 +1,70 @@
+PS C:\Users\Raksh\c-activity-sets2\set05> gcc  -g .\problem08.c
+PS C:\Users\Raksh\c-activity-sets2\set05> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+--Type <RET> for more, q to quit, c to continue without paging--
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) b main
+Breakpoint 1 at 0x1400017c3: file .\problem08.c, line 42.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set05\a.exe
+[New Thread 21520.0x2b48]
+
+Thread 1 hit Breakpoint 1, 0x00007ff718a917c3 in main () at .\problem08.c:42
+42      {
+(gdb) n
+44          printf("Enter the number of camels:\n");
+(gdb) n
+Enter the number of camels:
+45          scanf("%d",&n);
+(gdb) n
+3
+46          Camel c[n];
+(gdb) n
+48          input(n,c,&truck_weight);
+(gdb) n
+Enter the height of camel no. 1:
+1
+Enter the length of camel no. 1:
+1
+Enter the radius of camel no. 1:
+1
+Enter the height of camel no. 2:
+1
+Enter the length of camel no. 2:
+1
+Enter the radius of camel no. 2:
+1
+Enter the height of camel no. 3:
+1
+Enter the length of camel no. 3:
+1
+Enter the radius of camel no. 3:
+1
+Enter the weight of the truck:
+2000
+49          find_camel_weight(n,c);
+(gdb) n
+50          float total_weight=compute_total_weight(n,c,truck_weight);
+(gdb) n
+51          output(total_weight);
+(gdb) n
+The Total weight of the truck is: 2009.42602552     return 0;
+(gdb) n
+53      }
+(gdb) n
+__tmainCRTStartup () at C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c:268
+warning: 268    C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory

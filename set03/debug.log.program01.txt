@@ -1,0 +1,70 @@
+PS C:\Users\Raksh\c-activity-sets2\set03> gcc -g .\problem01.c
+PS C:\Users\Raksh\c-activity-sets2\set03> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+--Type <RET> for more, q to quit, c to continue without paging--
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) b main
+Breakpoint 1 at 0x14000168a: file .\problem01.c, line 22.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set03\a.exe
+[New Thread 10504.0x512c]
+
+Thread 1 hit Breakpoint 1, main () at .\problem01.c:22
+22         input(&x1,&y1,&x2,&y2);
+(gdb) s
+input (x1=0x5ffe98, y1=0x5ffe94, x2=0x5ffe90, y2=0x5ffe8c) at .\problem01.c:5
+5            scanf("%f %f",x1,y1);
+(gdb) n
+1 1
+6            scanf("%f %f",x2,y2);
+(gdb) n
+2 2
+7       }
+(gdb) n
+main () at .\problem01.c:23
+23         distance=find_distance(x1,y1,x2,y2);
+(gdb) s
+find_distance (x1=1, y1=1, x2=2, y2=2) at .\problem01.c:11
+11         d=(x2-x1)*(x2-x1)+(y2-y1)*(y2-y1);
+(gdb) n
+12         d=sqrt(d);
+(gdb) n
+13         return d;
+(gdb) n
+14      }
+(gdb) n
+main () at .\problem01.c:24
+24         output(x1,y1,x2,y2,distance);
+(gdb) s
+output (x1=1, y1=1, x2=2, y2=2, distance=1.41421354) at .\problem01.c:17
+17        printf("The distance between point (%f, %f) and (%f,%f) is %f",x1,y1,x2,y2,distance);
+(gdb) n
+The distance between point (1.000000, 1.000000) and (2.000000,2.000000) is 1.41421418   }
+(gdb) n
+main () at .\problem01.c:25
+25          return 0;
+(gdb) n
+26      }
+(gdb) n
+__tmainCRTStartup () at C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c:268
+warning: 268    C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory
+(gdb) n
+269     in C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c
+(gdb) n
+[Thread 10504.0x512c exited with code 0]
+[Inferior 1 (process 10504) exited normally]
+(gdb) exit

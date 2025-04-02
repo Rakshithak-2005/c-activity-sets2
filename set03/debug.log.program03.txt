@@ -1,0 +1,130 @@
+PS C:\Users\Raksh\c-activity-sets2\set03> gcc -g .\problem03.c
+PS C:\Users\Raksh\c-activity-sets2\set03> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+--Type <RET> for more, q to quit, c to continue without paging--
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) b main
+Breakpoint 1 at 0x1400015ee: file .\problem03.c, line 41.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set03\a.exe
+[New Thread 22208.0xe70]
+
+Thread 1 hit Breakpoint 1, main () at .\problem03.c:41
+41          n=input_number();
+(gdb) s
+input_number () at .\problem03.c:5
+5           scanf("%d",&a);
+(gdb) n
+3
+6           return a;
+(gdb) n
+7       }
+(gdb) n
+main () at .\problem03.c:42
+42          result=is_prime(n);
+(gdb) s
+is_prime (n=3) at .\problem03.c:10
+10          if(n==1||n==0)
+(gdb) n
+12           int cnt=0;
+(gdb) n
+13          if(n==2)
+(gdb) n
+17          if(n%2==0)
+(gdb) n
+21          for (int i=3;i<=n/2;i+=2)
+(gdb) n
+29          return cnt;
+(gdb) n
+30      }
+(gdb) n
+main () at .\problem03.c:43
+43          output(n,result);
+(gdb) s
+output (n=3, result=0) at .\problem03.c:33
+33         if(result>0)
+(gdb) n
+36         printf("%d is a prime",n);
+(gdb) n
+3 is a prime37  }
+(gdb) b main
+Note: breakpoint 1 also set at pc 0x7ff6072015ee.
+Breakpoint 2 at 0x7ff6072015ee: file .\problem03.c, line 41.
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: C:\Users\Raksh\c-activity-sets2\set03\a.exe
+[New Thread 22024.0x54d4]
+
+Thread 1 hit Breakpoint 1, main () at .\problem03.c:41
+41          n=input_number();
+(gdb) s
+input_number () at .\problem03.c:5
+5           scanf("%d",&a);
+(gdb) n
+15
+6           return a;
+(gdb) n
+7       }
+(gdb) n
+main () at .\problem03.c:42
+42          result=is_prime(n);
+(gdb) s
+is_prime (n=15) at .\problem03.c:10
+10          if(n==1||n==0)
+(gdb) n
+12           int cnt=0;
+(gdb) n
+13          if(n==2)
+(gdb) n
+17          if(n%2==0)
+(gdb) n
+21          for (int i=3;i<=n/2;i+=2)
+(gdb) n
+23              if(n%i==0)
+(gdb) n
+25                  cnt++;
+(gdb) n
+26                  break;
+(gdb) n
+29          return cnt;
+(gdb) n
+30      }
+(gdb) n
+main () at .\problem03.c:43
+43          output(n,result);
+(gdb) s
+output (n=15, result=1) at .\problem03.c:33
+33         if(result>0)
+(gdb) n
+34         printf("%d is not a prime",n);
+(gdb) n
+15 is not a prime37     }
+(gdb) n  
+main () at .\problem03.c:44
+44          return 0;
+(gdb) n
+45      }
+(gdb) n
+__tmainCRTStartup () at C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c:268
+warning: 268    C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory
+(gdb) n
+269     in C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c
+(gdb) n
+[Thread 22024.0x54d4 exited with code 0]
+[Inferior 1 (process 22024) exited normally]
+(gdb) exit

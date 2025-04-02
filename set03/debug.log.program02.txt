@@ -1,0 +1,73 @@
+PS C:\Users\Raksh\c-activity-sets2\set03> gcc -g .\problem02.c
+PS C:\Users\Raksh\c-activity-sets2\set03> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+--Type <RET> for more, q to quit, c to continue without paging--
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) b main
+Breakpoint 1 at 0x14000173d: file .\problem02.c, line 28.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set03\a.exe
+[New Thread 20128.0x10b4]
+
+Thread 1 hit Breakpoint 1, main () at .\problem02.c:28
+28          input_triangle(&x1,&y1,&x2,&y2,&x3,&y3);
+(gdb) s
+input_triangle (x1=0x5ffe98, y1=0x5ffe8c, x2=0x5ffe94, y2=0x5ffe88, x3=0x5ffe90, y3=0x5ffe84) at .\problem02.c:4
+4          scanf("%f %f",x1,y1);
+(gdb) n
+1 1
+5          scanf("%f %f",x2,y2);
+(gdb) n
+0 0
+6          scanf("%f %f",x3,y3);
+(gdb) n
+1 1
+7       }
+(gdb) n
+main () at .\problem02.c:29
+29          result=is_triangle(x1,y1,x2,y2,x3,y3);
+(gdb) s
+is_triangle (x1=1, y1=1, x2=0, y2=0, x3=1, y3=1) at .\problem02.c:10
+10         int r=0.5*(x1*(y2-y3)+x2*(y3-y1)+x3*(y1-y2));
+(gdb) n
+11         return r;
+(gdb) n
+12      }
+(gdb) n
+main () at .\problem02.c:30
+30          output(x1,y1,x2,y2,x3,y3,result);
+(gdb) s
+output (x1=1, y1=1, x2=0, y2=0, x3=1, y3=1, result=0) at .\problem02.c:15
+15         if(result!=0)
+(gdb) n
+21          printf("The points (%f,%f), (%f, %f) and (%f,%f) do not form a triangle",x1,y1,x2,y2,x3,y3);
+(gdb) n
+The points (1.000000,1.000000), (0.000000, 0.000000) and (1.000000,1.000000) do not form a triangle23   }
+(gdb) n
+main () at .\problem02.c:31
+31          return 0;
+(gdb) n
+32      }
+(gdb) n
+__tmainCRTStartup () at C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c:268
+warning: 268    C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory
+(gdb) n
+269     in C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c
+(gdb) n
+[Thread 20128.0x10b4 exited with code 0]
+[Inferior 1 (process 20128) exited normally]
+(gdb) exit

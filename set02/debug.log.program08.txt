@@ -1,0 +1,152 @@
+PS C:\Users\Raksh\c-activity-sets2\set02> gcc -g .\problem08.c
+PS C:\Users\Raksh\c-activity-sets2\set02> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+--Type <RET> for more, q to quit, c to continue without paging--
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) b main
+Breakpoint 1 at 0x1400017a8: file .\problem08.c, line 50.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set02\a.exe
+[New Thread 3296.0xad4]
+
+Thread 1 hit Breakpoint 1, 0x00007ff62e2817a8 in main () at .\problem08.c:50
+50      int main() {
+(gdb) n
+51          int n = input_n();
+(gdb) s
+input_n () at .\problem08.c:9
+9           scanf("%d", &n);
+(gdb) n
+2
+10          return n;
+(gdb) n
+11      }
+(gdb) n
+main () at .\problem08.c:52
+52          Triangle triangles[n];
+(gdb) n
+53          input_n_triangles(n, triangles);
+(gdb) s
+input_n_triangles (n=2, t=0x5ffe30) at .\problem08.c:20
+20          for (int i = 0; i < n; i++) {
+(gdb) n
+21              t[i] = input_triangle();
+(gdb) s
+input_triangle () at .\problem08.c:15
+15          scanf("%f %f", &t.base, &t.altitude);
+(gdb) n
+2 3
+16          return t;
+(gdb) n
+17      }
+(gdb) n
+input_n_triangles (n=2, t=0x5ffe30) at .\problem08.c:20
+20          for (int i = 0; i < n; i++) {
+(gdb) n
+21              t[i] = input_triangle();
+(gdb) s
+input_triangle () at .\problem08.c:15
+15          scanf("%f %f", &t.base, &t.altitude);
+(gdb) 4 6
+Undefined command: "4".  Try "help".
+(gdb) n
+4 6
+16          return t;
+(gdb) n
+17      }
+(gdb) n
+input_n_triangles (n=2, t=0x5ffe30) at .\problem08.c:20
+20          for (int i = 0; i < n; i++) {
+(gdb) n
+23      }
+(gdb) n
+main () at .\problem08.c:54
+54          find_n_areas(n, triangles);
+(gdb) s
+find_n_areas (n=2, t=0x5ffe30) at .\problem08.c:30
+30          for (int i = 0; i < n; i++) {
+(gdb) n
+31              find_area(&t[i]);
+(gdb) s
+find_area (t=0x5ffe30) at .\problem08.c:26
+26          t->area = 0.5 * t->base * t->altitude;
+(gdb) n
+27      }
+(gdb) n
+find_n_areas (n=2, t=0x5ffe30) at .\problem08.c:30
+30          for (int i = 0; i < n; i++) {
+(gdb) n
+31              find_area(&t[i]);
+(gdb) s
+find_area (t=0x5ffe3c) at .\problem08.c:26
+26          t->area = 0.5 * t->base * t->altitude;
+(gdb) n
+27      }
+(gdb) n
+find_n_areas (n=2, t=0x5ffe30) at .\problem08.c:30
+30          for (int i = 0; i < n; i++) {
+(gdb) n
+33      }
+(gdb) n
+main () at .\problem08.c:55
+55          Triangle smallest = find_smallest_triangle(n, triangles);
+(gdb) s
+find_smallest_triangle (n=2, t=0x5ffe30) at .\problem08.c:36
+36          Triangle min = t[0];
+(gdb) n
+37          for (int i = 1; i < n; i++) {
+(gdb) n
+38              if (t[i].area < min.area) {
+(gdb) n
+37          for (int i = 1; i < n; i++) {
+(gdb) n
+42          return min;
+(gdb) n
+43      }
+(gdb) n
+main () at .\problem08.c:56
+56          output(n, triangles, smallest);
+(gdb) s
+output (n=2, t=0x5ffe30, smallest=...) at .\problem08.c:47
+47                 smallest.base, smallest.altitude, smallest.area);
+(gdb) n
+46          printf("The smallest triangle out of the entered triangles is the one with base %f, height %f, and area %f.\n",
+(gdb) n
+47                 smallest.base, smallest.altitude, smallest.area);
+(gdb) n
+46          printf("The smallest triangle out of the entered triangles is the one with base %f, height %f, and area %f.\n",
+(gdb) n
+47                 smallest.base, smallest.altitude, smallest.area);
+(gdb) n
+46          printf("The smallest triangle out of the entered triangles is the one with base %f, height %f, and area %f.\n",
+(gdb) n
+The smallest triangle out of the entered triangles is the one with base 2.000000, height 3.000000, and area 3.000000.
+48      }
+(gdb) n
+main () at .\problem08.c:57
+57          return 0;
+(gdb) n
+58      }
+(gdb) n
+__tmainCRTStartup () at C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c:268
+warning: 268    C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory
+(gdb) n
+269     in C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c
+(gdb) n
+[Thread 3296.0xad4 exited with code 0]
+[Inferior 1 (process 3296) exited normally]
+(gdb) exit

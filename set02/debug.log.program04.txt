@@ -1,0 +1,303 @@
+PS C:\Users\Raksh\c-activity-sets2\set02> gcc -g .\problem04.c
+PS C:\Users\Raksh\c-activity-sets2\set02> gdb a.exe
+GNU gdb (GDB) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-w64-mingw32".
+Type "show configuration" for configuration details.
+--Type <RET> for more, q to quit, c to continue without paging--
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.exe...
+(gdb) b main
+Breakpoint 1 at 0x14000164d: file .\problem04.c, line 43.
+(gdb) r
+Starting program: C:\Users\Raksh\c-activity-sets2\set02\a.exe
+[New Thread 16084.0x70c]
+
+Thread 1 hit Breakpoint 1, 0x00007ff74650164d in main () at .\problem04.c:43
+43      {
+(gdb) s
+44          int n = input_array_size();
+(gdb) s
+input_array_size () at .\problem04.c:5
+5           scanf("%d", &n);
+(gdb) n
+5
+6           return n;
+(gdb) n
+7       }
+(gdb) n
+main () at .\problem04.c:45
+45          int a[n];
+(gdb) n
+46          input_array(n, a);
+(gdb) s
+input_array (n=5, a=0x5ffe50) at .\problem04.c:10
+10          for (int i = 0; i < n; i++) {
+(gdb) n
+11              scanf("%d", &a[i]);
+(gdb) n
+1
+10          for (int i = 0; i < n; i++) {
+(gdb) n
+11              scanf("%d", &a[i]);
+(gdb) n
+2
+10          for (int i = 0; i < n; i++) {
+(gdb) n
+11              scanf("%d", &a[i]);
+(gdb) n
+7
+10          for (int i = 0; i < n; i++) {
+(gdb) n
+11              scanf("%d", &a[i]);
+(gdb) n
+8
+10          for (int i = 0; i < n; i++) {
+(gdb) n
+11              scanf("%d", &a[i]);
+(gdb) n
+12
+10          for (int i = 0; i < n; i++) {
+(gdb) n
+13      }
+(gdb) n
+main () at .\problem04.c:47
+47          int sum = sum_composite_numbers(n, a);
+(gdb) s
+sum_composite_numbers (n=5, a=0x5ffe50) at .\problem04.c:16
+16          int sum = 0;
+(gdb) n
+17          for (int i = 0; i < n; i++)
+(gdb) n
+19              int cnt = 0;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+25                      cnt++;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+28              if (cnt > 2)
+(gdb) n
+17          for (int i = 0; i < n; i++)
+(gdb) n
+19              int cnt = 0;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+25                      cnt++;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+25                      cnt++;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+28              if (cnt > 2)
+(gdb) n
+17          for (int i = 0; i < n; i++)
+(gdb) n
+19              int cnt = 0;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+25                      cnt++;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+25                      cnt++;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+28              if (cnt > 2)
+(gdb) n
+17          for (int i = 0; i < n; i++)
+(gdb) n
+19              int cnt = 0;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+25                      cnt++;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+25                      cnt++;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+25                      cnt++;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+25                      cnt++;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+28              if (cnt > 2)
+(gdb) n
+30                  sum += a[i];
+(gdb) n
+17          for (int i = 0; i < n; i++)
+(gdb) n
+19              int cnt = 0;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+25                      cnt++;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+25                      cnt++;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+25                      cnt++;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+25                      cnt++;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+25                      cnt++;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+23                  if (a[i] % j == 0)
+(gdb) n
+25                      cnt++;
+(gdb) n
+21              for (int j = 1; j <= a[i]; j++)
+(gdb) n
+28              if (cnt > 2)
+(gdb) n
+30                  sum += a[i];
+(gdb) n
+17          for (int i = 0; i < n; i++)
+(gdb) n
+34          return sum;
+(gdb) n
+35      }
+(gdb) n
+main () at .\problem04.c:48
+48          output(sum);
+(gdb) s
+output (sum=20) at .\problem04.c:39
+39          printf("%d\n", sum);
+(gdb) n
+20
+40      }
+(gdb) n
+main () at .\problem04.c:49
+49          return 0;
+(gdb) n
+50      }
+(gdb) n
+__tmainCRTStartup () at C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c:268
+warning: 268    C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c: No such file or directory
+(gdb) n
+269     in C:/M/B/src/mingw-w64/mingw-w64-crt/crt/crtexe.c
+(gdb) n
+[Thread 16084.0x70c exited with code 0]
+[Inferior 1 (process 16084) exited normally]
+(gdb) n
+The program is not being run.
+(gdb) exit
